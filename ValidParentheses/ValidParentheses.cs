@@ -10,7 +10,8 @@ namespace Parentheses
         private char[] openParenthesis = { '[', '(', '{' };
         private char[] closeParenthesis = { ']', ')', '}' };
         private bool result = true;
-        public bool isInputValid(string input)
+
+        public bool IsInputValid(string input)
         {
             for (int i = 0; i < input.Length - 1; i++)
             {
@@ -25,6 +26,11 @@ namespace Parentheses
                 }
             }
             return result;
+        }
+
+        public string AskTheString()
+        {
+            return Console.ReadLine();
         }
     }
 }

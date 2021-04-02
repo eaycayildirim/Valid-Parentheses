@@ -16,7 +16,7 @@ namespace UnitTestForParentheses
 
             //When
             ValidParentheses valid = new ValidParentheses();
-            bool actual = valid.isInputValid(input);
+            bool actual = valid.IsInputValid(input);
 
             //Then
             Assert.AreEqual(expected, actual);
@@ -30,7 +30,7 @@ namespace UnitTestForParentheses
 
             //When
             ValidParentheses valid = new ValidParentheses();
-            bool actual = valid.isInputValid(input);
+            bool actual = valid.IsInputValid(input);
 
             //Then
             Assert.AreEqual(expected, actual);
@@ -44,7 +44,7 @@ namespace UnitTestForParentheses
 
             //When
             ValidParentheses valid = new ValidParentheses();
-            bool actual = valid.isInputValid(input);
+            bool actual = valid.IsInputValid(input);
 
             //Then
             Assert.AreEqual(expected, actual);

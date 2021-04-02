@@ -7,10 +7,8 @@ namespace ValidParenthesesMain
     {
         static void Main(string[] args)
         {
-            string input = "[()()]";
-
             ValidParentheses valid = new ValidParentheses();
-            valid.isInputValid(input);
+            valid.IsInputValid(valid.AskTheString());
         }
     }
 }
