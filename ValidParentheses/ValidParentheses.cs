@@ -7,30 +7,36 @@ namespace Parentheses
 {
     public class ValidParentheses
     {
-        private char[] openParenthesis = { '[', '(', '{' };
-        private char[] closeParenthesis = { ']', ')', '}' };
-        private bool result = true;
-
-        public bool IsInputValid(string input)
-        {
-            for (int i = 0; i < input.Length - 1; i++)
-            {
-                if (!openParenthesis.Contains(input[i + 1]))
-                {
-                    if (Array.IndexOf(openParenthesis, input[i]) != Array.IndexOf(closeParenthesis, input[i + 1]))
-                    {
-                        result = false;
-                    }
-                    else
-                        return result;
-                }
-            }
-            return result;
-        }
-
         public string AskTheString()
         {
             return Console.ReadLine();
+        }
+
+        public void WriteTheResult()
+        {
+            if(IsInputValid(AskTheString()))
+                Console.WriteLine("True");
+            else
+                Console.WriteLine("False");
+        }
+
+        public bool IsInputValid(string input)
+        {
+            Stack<char> stack = new Stack<char>();
+
+            foreach (var parentheses in input)
+            {
+                if (stack.Count > 0 && parentheses == ')' && stack.Peek() == '(')
+                    stack.Pop();
+                else if (stack.Count > 0 && parentheses == ']' && stack.Peek() == '[')
+                    stack.Pop();
+                else if (stack.Count > 0 && parentheses == '}' && stack.Peek() == '{')
+                    stack.Pop();
+                else
+                    stack.Push(parentheses);
+            }
+            return stack.Count == 0;
+            
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ValidParenthesesMain
         static void Main(string[] args)
         {
             ValidParentheses valid = new ValidParentheses();
-            valid.IsInputValid(valid.AskTheString());
+            valid.WriteTheResult();
         }
     }
 }
